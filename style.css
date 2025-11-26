@@ -1,0 +1,93 @@
+/* Canvas ocupa tota la pantalla */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+canvas {
+  display: block;
+  position: center;
+  top: 0;
+  left: 0;
+  z-index: 0; /* canvas al fons */
+}
+
+/* Overlay UI gamer però formal */
+#overlay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 15, 20, 0.85);
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 10; /* per sobre del canvas */
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#overlay h1 {
+  margin: 0 0 15px;
+  font-size: 24px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Botons estil gamer */
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+button {
+  background: linear-gradient(135deg, #1f1f2e, #2a2a40);
+  border: 1px solid #00ffcc;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: #00ffcc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00ffcc, #0066ff);
+  color: #fff;
+  box-shadow: 0 0 12px #00ffcc;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Barra de volum */
+.vol-container {
+  margin-top: 10px;
+}
+
+#volBar {
+  width: 250px;
+  height: 20px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px auto;
+  border: 1px solid #00ffcc;
+}
+
+#volFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ff88, #ff0040);
+  transition: width 0.1s;
+}
